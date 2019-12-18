@@ -12,7 +12,7 @@ func main() {
 
 	counter := 0
 
-	lines := readFile()
+	lines := readLines("day01.txt")
 
 	for _, line := range lines {
 		if n, err := strconv.Atoi(line); err == nil {
@@ -26,12 +26,12 @@ func main() {
 	fmt.Println("Fuel required:", counter)
 }
 
-func readFile() []string {
+func readLines(f string) []string {
 
 	var lines []string
 
 	// Open the file
-	file, err := os.Open("./input.txt")
+	file, err := os.Open(f)
 	if err != nil {
 		fmt.Println(err)
 		return lines
